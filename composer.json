@@ -1,0 +1,18 @@
+{
+    "name": "rubricate/grid",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":  "Estefanio N Santos",
+            "email": "estefanions@gmail.com"
+        }
+    ],
+    "require": {
+        "Rubricate/element": "^0.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rubricate\\Grid\\": "Rubricate/Grid/"
+        }
+    }
+}
