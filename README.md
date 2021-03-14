@@ -7,7 +7,6 @@ $ composer require rubricate/grid
 ## Example
 
 
-
 ### Class RowGridHelper
 
 ```php
@@ -107,5 +106,6 @@ include '../vendor/autoload.php';
 </html>
 <body>
 ```
+
 
 
