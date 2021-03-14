@@ -1,10 +1,9 @@
 <?php 
 
 /*
- * @package     Rubricate
- * @author      Estefanio N Santos<estefanions AT gmail DOT com>
+ * @package     Rubricate Grid
+ * @author      Estefanio N Santos <estefanions AT gmail DOT com>
  * @link        https://github.com/rubricate/grid
- * @copyright   2017-2018
  * 
  */
 
@@ -20,8 +19,6 @@ abstract class AbstractRowGrid implements IGetElement
 {
 
     private $row = array();
-    private $column;
-
 
 
     public function __construct()
@@ -29,12 +26,12 @@ abstract class AbstractRowGrid implements IGetElement
     }
 
 
-    abstract protected function getRowAttrStrClass();
-    abstract protected function getColAttrStrClassWrap();
+    abstract protected function getRow();
+    abstract protected function getColFormat();
     
     public function addCol($size, IGetElement $elem, $attrArr = array())
     {
-        $str  = $this->getColAttrStrClassWrap();
+        $str  = $this->getColFormat();
         $attr = $attrArr;
 
         $this->row[] = new ColGrid($str, $size, $elem, $attr);
@@ -44,7 +41,7 @@ abstract class AbstractRowGrid implements IGetElement
     public function getElement()
     {
         $r = new CreateElement('div');
-        $r->setAttribute('class', $this->getRowAttrStrClass());
+        $r->setAttribute('class', $this->getRow());
         $r->addChild(new StrElement("\n"));
 
         foreach ($this->row as $e) {

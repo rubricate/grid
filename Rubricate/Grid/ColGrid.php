@@ -1,10 +1,9 @@
 <?php 
 
 /*
- * @package     Rubricate
+ * @package     Rubricate Grid
  * @author      Estefanio N Santos <estefanions AT gmail DOT com>
- * @link        https://github.com/senun
- * @copyright   2017-2018
+ * @link        https://github.com/rubricate/grid
  * 
  */
 
@@ -19,13 +18,13 @@ class ColGrid implements IGetElement
 {
 
     private $grid;
-    private $attrClassStrWrap;
+    private $colFormat;
 
     public function __construct(
-        $attrClassStrWrap, $size, $e, $attrArr = array() 
+        $colFormat, $size, $e, $attrArr = array() 
     )
     {
-        self::init($attrClassStrWrap, $size, $e, $attrArr);
+        self::init($colFormat, $size, $e, $attrArr);
     }
 
 
@@ -36,10 +35,10 @@ class ColGrid implements IGetElement
     } 
 
 
-    private function init($attrClassStrWrap, $size, IGetElement $e, $attrArr)
+    private function init($colFormat, $size, IGetElement $e, $attrArr)
     {
         $grid  = new CreateElement('div') ;
-        $class = sprintf($attrClassStrWrap, $size);
+        $class = sprintf($colFormat, $size);
 
         if (array_key_exists('class', $attrArr)) {
             $class =  $class . ' ' . $attrArr['class'];
