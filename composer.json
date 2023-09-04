@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "rubricate/element": "^0.4"
+        "rubricate/element": "^1.0"
     },
     "autoload": {
         "psr-4": {
