@@ -1,30 +1,18 @@
 <?php 
 
-/*
- * @package     Rubricate Grid
- * @author      Estefanio N Santos <estefanions AT gmail DOT com>
- * @link        https://github.com/rubricate/grid
- * 
- */
-
-
 namespace Rubricate\Grid;
 
 use Rubricate\Element\IGetElement;
 use Rubricate\Element\CreateElement;
 use Rubricate\Element\StrElement;
 
-
 abstract class AbstractRowGrid implements IGetElement
 {
-
     private $row = array();
-
 
     public function __construct()
     {
     }
-
 
     abstract protected function getRow();
     abstract protected function getColFormat();
@@ -36,7 +24,6 @@ abstract class AbstractRowGrid implements IGetElement
 
         $this->row[] = new ColGrid($str, $size, $elem, $attr);
     } 
-
 
     public function getElement()
     {
@@ -50,8 +37,6 @@ abstract class AbstractRowGrid implements IGetElement
 
         return $r->getElement() . "\n\n";
     } 
-
-
 
 }
 

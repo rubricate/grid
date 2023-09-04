@@ -1,22 +1,12 @@
 <?php 
 
-/*
- * @package     Rubricate Grid
- * @author      Estefanio N Santos <estefanions AT gmail DOT com>
- * @link        https://github.com/rubricate/grid
- * 
- */
-
-
 namespace Rubricate\Grid;
 
 use Rubricate\Element\IGetElement;
 use Rubricate\Element\CreateElement;
 
-
 class ColGrid implements IGetElement
 {
-
     private $grid;
     private $colFormat;
 
@@ -27,13 +17,10 @@ class ColGrid implements IGetElement
         self::init($colFormat, $size, $e, $attrArr);
     }
 
-
-
     public function getElement()
     {
         return $this->grid->getElement() . "\n";
     } 
-
 
     private function init($colFormat, $size, IGetElement $e, $attrArr)
     {
@@ -47,7 +34,7 @@ class ColGrid implements IGetElement
 
         $grid->setAttribute('class', $class);
 
-        if (count($attrArr)) {
+        if (count((array) $attrArr)) {
             foreach ($attrArr as $key => $value) {
                 $grid->setAttribute($key, $value);
             }
@@ -56,8 +43,6 @@ class ColGrid implements IGetElement
         $grid->addChild($e);
         $this->grid = $grid;
     } 
-
-
 
 }
 
