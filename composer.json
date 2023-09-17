@@ -8,7 +8,8 @@
         }
     ],
     "require": {
-        "rubricate/element": "^1.0"
+        "php": ">=7.2",
+        "rubricate/element": "^2.2"
     },
     "autoload": {
         "psr-4": {
