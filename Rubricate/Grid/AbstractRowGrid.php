@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Grid;
 
 use Rubricate\Element\IGetElement;
@@ -17,7 +19,7 @@ abstract class AbstractRowGrid implements IGetElement
     abstract protected function getRow();
     abstract protected function getColFormat();
     
-    public function addCol($size, IGetElement $elem, $attrArr = array())
+    public function addCol($size, IGetElement $elem, $attrArr = array()): void
     {
         $str  = $this->getColFormat();
         $attr = $attrArr;
@@ -25,7 +27,7 @@ abstract class AbstractRowGrid implements IGetElement
         $this->row[] = new ColGrid($str, $size, $elem, $attr);
     } 
 
-    public function getElement()
+    public function getElement(): string
     {
         $r = new CreateElement('div');
         $r->setAttribute('class', $this->getRow());

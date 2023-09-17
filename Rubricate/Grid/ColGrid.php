@@ -1,5 +1,7 @@
 <?php 
 
+declare(strict_types=1);
+
 namespace Rubricate\Grid;
 
 use Rubricate\Element\IGetElement;
@@ -17,12 +19,12 @@ class ColGrid implements IGetElement
         self::init($colFormat, $size, $e, $attrArr);
     }
 
-    public function getElement()
+    public function getElement(): string
     {
         return $this->grid->getElement() . "\n";
     } 
 
-    private function init($colFormat, $size, IGetElement $e, $attrArr)
+    private function init($colFormat, $size, IGetElement $e, $attrArr): void
     {
         $grid  = new CreateElement('div') ;
         $class = sprintf($colFormat, $size);
